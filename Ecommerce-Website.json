@@ -1,0 +1,162 @@
+[
+    {
+        "id": 0,
+        "img": "imgs/image e-commrce/img/product/product1.jpg",
+        "img_hover": "imgs/image e-commrce/img/product/product-1.jpg",
+        "name": "Original Mobile Android Dual SIM Smart Phone G3",
+        "price": 185,
+        "old_price": 225,
+        "categorie" : "phone",
+        "brand":"apple",
+        "color":"red"
+    },
+    {
+        "id": 1,
+        "img": "imgs/image e-commrce/img/product/product2.jpg",
+        "img_hover": "imgs/image e-commrce/img/product/product-2.jpg",
+        "name": "Original Mobile Android Dual SIM Smart Phone G3",
+        "price": 100,
+        "old_price": 120,
+        "categorie" : "phone",
+        "brand":"samsung",
+        "color":"green"
+    },
+    {
+        "id": 2,
+        "img": "imgs/image e-commrce/img/product/product3.jpg",
+        "img_hover": "imgs/image e-commrce/img/product/product-3.jpg",
+        "name": "Original Mobile Android Dual SIM Smart Phone G3",
+        "price": 140,
+        "old_price": 200,
+        "categorie" : "tv",
+        "color":"blue"
+    },
+    {
+        "id": 3,
+        "img": "imgs/image e-commrce/img/product/product4.jpg",
+        "img_hover": "imgs/image e-commrce/img/product/product-4.jpg",
+        "name": "Original Mobile Android Dual SIM Smart Phone G3",
+        "price": 90,
+        "old_price": 110,
+        "categorie" : "electronic",
+        "color":"black"
+    },
+    {
+        "id": 4,
+        "img": "imgs/image e-commrce/img/product/product5.jpg",
+        "img_hover": "imgs/image e-commrce/img/product/product-5.jpg",
+        "name": "Original Mobile Android Dual SIM Smart Phone G3",
+        "price": 350,
+        "old_price": 420,
+        "categorie" : "electronic",
+        "color":"red"
+    },
+    {
+        "id": 5,
+        "img": "imgs/image e-commrce/img/product/product6.jpg",
+        "img_hover": "imgs/image e-commrce/img/product/product-6.jpg",
+        "name": "Original Mobile Android Dual SIM Smart Phone G3",
+        "price": 115,
+        "old_price": 235,
+        "categorie" : "phone",
+        "brand":"intel",
+        "color":"green"
+    },
+    {
+        "id": 6,
+        "img": "imgs/image e-commrce/img/product/product7.jpg",
+        "img_hover": "imgs/image e-commrce/img/product/product-7.jpg",
+        "name": "Original Mobile Android Dual SIM Smart Phone G3",
+        "price": 225,
+        "old_price": 280,
+        "categorie" : "phone",
+        "brand":"oppo",
+        "color":"blue"
+    },
+    {
+        "id": 7,
+        "img": "imgs/image e-commrce/img/product/product8.jpg",
+        "img_hover": "imgs/image e-commrce/img/product/product-8.jpg",
+        "name": "Original Mobile Android Dual SIM Smart Phone G3",
+        "price": 150,
+        "old_price": 200,
+        "categorie" : "watch",
+        "color":"black"
+    },
+    {
+        "id": 8,
+        "img": "imgs/image e-commrce/img/product/product-1.jpg",
+        "img_hover": "imgs/image e-commrce/img/product/product1.jpg",
+        "name": "Original Mobile Android Dual SIM Smart Phone G3",
+        "price": 180,
+        "categorie" : "phone",
+        "brand":"xiaomi",
+        "color":"red"
+    },
+    {
+        "id": 9,
+        "img": "imgs/image e-commrce/img/product/product-2.jpg",
+        "img_hover": "imgs/image e-commrce/img/product/product2.jpg",
+        "name": "Original Mobile Android Dual SIM Smart Phone G3",
+        "price": 300,
+        "categorie" : "phone",
+        "brand":"huawei",
+        "color":"green"
+    },
+    {
+        "id": 10,
+        "img": "imgs/image e-commrce/img/product/product-3.jpg",
+        "img_hover": "imgs/image e-commrce/img/product/product3.jpg",
+        "name": "Original Mobile Android Dual SIM Smart Phone G3",
+        "price": 250,
+        "categorie" : "tv",
+        "color":"blue"
+    },
+    {
+        "id": 11,
+        "img": "imgs/image e-commrce/img/product/product-4.jpg",
+        "img_hover": "imgs/image e-commrce/img/product/product4.jpg",
+        "name": "Original Mobile Android Dual SIM Smart Phone G3",
+        "price": 120,
+        "categorie" : "electronic",
+        "color":"black"
+    },
+    {
+        "id": 12,
+        "img": "imgs/image e-commrce/img/product/product-5.jpg",
+        "img_hover": "imgs/image e-commrce/img/product/product5.jpg",
+        "name": "Original Mobile Android Dual SIM Smart Phone G3",
+        "price": 90,
+        "categorie" : "electronic",
+        "color":"red"
+    },
+    {
+        "id": 13,
+        "img": "imgs/image e-commrce/img/product/product-6.jpg",
+        "img_hover": "imgs/image e-commrce/img/product/product6.jpg",
+        "name": "Original Mobile Android Dual SIM Smart Phone G3",
+        "price": 129,
+        "categorie" : "phone",
+        "brand":"apple",
+        "color":"green"
+    },
+    {
+        "id": 14,
+        "img": "imgs/image e-commrce/img/product/product-7.jpg",
+        "img_hover": "imgs/image e-commrce/img/product/product7.jpg",
+        "name": "Original Mobile Android Dual SIM Smart Phone G3",
+        "price": 180,
+        "categorie" : "phone",
+        "brand":"samsung",
+        "color":"blue"
+    },
+    {
+        "id": 15,
+        "img": "imgs/image e-commrce/img/product/product-8.jpg",
+        "img_hover": "imgs/image e-commrce/img/product/product8.jpg",
+        "name": "Original Mobile Android Dual SIM Smart Phone G3",
+        "price": 60,
+        "categorie" : "watch",
+        "color":"black"
+    }
+]
