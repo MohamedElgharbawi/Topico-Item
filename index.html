@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITem</title>
+    <link rel="shortcut icon" type="image/x-icon" href="imgs/image e-commrce/img/favicon.ico">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        .page {
+            background: var(--element-color);
+        }
+        .page .left {
+            background: #fff;
+        }
+        .page .left , 
+        .page .right {
+            width: 48%;
+        }
+        .page .left .image img {
+            width: 450px !important;
+        }
+        .page .left .sm-imgs {
+            gap: 10px;
+        }
+        .page .left .sm-imgs img {
+            width: 60px;
+            cursor: pointer;
+            transition-duration: .3s;
+        }
+        .page .left .sm-imgs img:hover {
+            transform: scale(1.2);
+        }
+        .page .right h3 {
+            font-weight: 800;
+            font-size: 22px;
+        }
+        .page .right span:not(.old-price , .icon) ,
+        .page .right .stars i  {
+            color: var(--main-color);
+        }
+        .page .right .new-price{
+            font-size: 22px;
+            font-weight: 900;
+            margin-right: 10px;
+        }
+        .page .right .old-price {
+            font-size: 16px;
+            color: var(--parg-color);
+            text-decoration: line-through !important;
+        }
+        .page .right .description , 
+        .page .right .description + p{
+            font-weight: 600;
+        }
+        .page .right .description + p {
+            margin: 0;
+        }
+        .page .right .description + p + p {
+            font-size: 18px;
+        }
+        .page .right h4 {
+            font-size: 19px;
+            font-weight: 800;
+            margin: 0 ;
+        }
+        .page .right button {
+            border: none;
+            outline: none;
+            background: var(--main-color);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 800;
+            overflow: hidden;
+        }
+        .page .icons {
+            gap: 12px;
+        }
+        .page .icons .icon {
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            background: #f5f6f9;
+            border-radius: 50%;
+            transition: .3s;
+        }
+        .page .icons .icon:hover {
+            color: #fff;
+            background: var(--main-color);
+        }
+        .to-Top {
+            background: var(--main-color);
+            color: #fff !important;
+            padding: 5px 12px;
+            border-radius: 5px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            font-size: 20px;
+            display: none;
+            transition-duration: .3s;
+            z-index: 2;
+        }
+        .to-Top:hover {
+            background: #e5a700;
+        }
+        @media (width < 992px) {
+            .page .container {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+            .page .right , 
+            .page .left {
+                width: 100%;
+            }
+            .right h3 ,
+            .right .description + p + p ,
+            .right h4 {
+                text-align: center;
+            }
+            .right .stars , 
+            .right .description , 
+            .right .price , 
+            .right .description + p {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .right button {
+                margin: auto;
+                display: block;
+            }
+            .right .icons {
+                justify-content: center;
+            }
+        }
+        @media (width < 600px) {
+            .right h3 {
+                font-size: 16px !important;
+            }
+            .page .right .description + p {
+                font-size: 12px !important;
+            }
+            .page .right .description + p + p {
+                font-size: 14px;
+            }
+            .page .right h4 {
+                font-size: 13px;
+            }
+        }
+        #mode {
+            border: none;
+            outline: none;
+            width: 38px !important;
+            height: 38px !important;
+            background: var(--main-color);
+            border-radius: 50%;
+            transition: .3s;
+        }
+        #mode:hover {
+            background-color: #e5a700;
+        }
+        #mode .none {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#" class="to-Top position-fixed overflow-hidden"><i class="fa-solid fa-arrow-up"></i></a>
+    <header class="position-fixed">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <a href="https://mohamedelgharbawi.github.io/Topico-Home/"><img src="imgs/image e-commrce/img/logo-black.png" alt="logo-black" class="logo-1"></a>
+            </div>
+            <form action="" class="search position-relative">
+                <input type="search" placeholder="Search For Products...">
+                <button type="submit" class="position-absolute">Search</button>
+            </form>
+            <div class="cart-header d-flex align-items-center">
+                <div class="icon-cart position-relative d-flex justify-content-center align-items-center"
+                    onclick="addActive();set_bg_active()">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span
+                        class="count-items position-absolute d-flex justify-content-center align-items-center">0</span>
+                </div>
+                <div class="total-price">
+                    <p>My Cart : <span class="final-price">$0</span></p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container d-flex justify-content-between align-items-center">
+            <i class="fa-solid fa-bars"></i>
+            <nav>
+                <div class="img_with_icon d-flex align-items-center justify-content-between d-none">
+                    <a href="https://mohamedelgharbawi.github.io/Topico-Home/"><img src="imgs/image e-commrce/img/logo-black.png" alt="" class="logo-2"></a>
+                    <i class="fa-solid fa-circle-xmark"></i>
+                </div>
+                <ul class="d-flex justify-content-center align-items-center">
+                    <li><a href="https://mohamedelgharbawi.github.io/Topico-Home/">Home</a></li> 
+                    <li><a href="https://mohamedelgharbawi.github.io/Topico-Allproducts/">All Products</a></li>
+                    <li class="active"><a href="https://mohamedelgharbawi.github.io/Topico-Item/">ITem</a></li>
+                    <li><a href="https://mohamedelgharbawi.github.io/Topico-Checkout/">Checkout</a></li>
+                </ul>
+            </nav>
+            <span style="z-index: 4;"></span>
+            <div class="login_sign-up d-flex align-items-center">
+                <a href="https://mohamedelgharbawi.github.io/Topico-Login/">login<i class="fa-solid fa-right-to-bracket ms-2"></i></a>
+                <a href="https://mohamedelgharbawi.github.io/Topico-Sign-up/">sign-up<i class="fa-solid fa-user-plus ms-2"></i></a>
+                <button class="d-flex justify-content-center align-items-center" id="mode">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#E8EAED" class="dark"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#E8EAED" class="light none"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="bg" onclick="remove_bg_active();removeActive()"></div>
+    <div class="my-cart position-fixed d-flex flex-column justify-content-between p-3">
+        <div class="head d-flex justify-content-between align-items-center pb-3">
+            <p class="m-0"><span>My Item </span><span class="Span_Two">(0 Item In Cart)</span></p>
+            <i class="fa-solid fa-circle-xmark" onclick="removeActive();remove_bg_active()"></i>
+        </div>
+        <div class="body py-3 position-relative overflow-auto">
+        </div>
+        <div class="foot pt-3">
+            <p class="d-flex justify-content-between">Cart subtotal <span class="final-price">$0</span></p>
+            <button class="mb-2 checkout">proceed to checkout</button>
+            <button>shop more</button>
+        </div>
+    </div>
+    <section class="page">
+        <div class="container d-flex justify-content-between align-items-center py-3">
+            <div class="left overflow-hidden">
+                <div class="image d-flex justify-content-center align-items-center"><img
+                        src="imgs/image e-commrce/img/product/product2.jpg" alt=""></div>
+                <div class="sm-imgs d-flex justify-content-center align-items-center flex-wrap">
+                </div>
+            </div>
+            <div class="right">
+                <h3>Original Mobile Android Dual Sim Smart Phone G3</h3>
+                <div class="stars my-3">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div class="price">
+                    <span class="new-price">$100</span>
+                    <span class="old-price">$120</span>
+                </div>
+                <p class="description my-3">Availability <span>: In Stock</span></p>
+                <p>Sku : <span>ipsum dolor sit amet consectetur adipisicing.</span></p>
+                <p class="my-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit eligendi unde, delectus
+                    inventore, itaque corporis, officiis odio voluptate hic nostrum adipisci ipsa fuga tenetur modi fugiat
+                    suscipit. Consequuntur sequi facere, ipsam tempora esse necessitatibus deserunt exercitationem corporis
+                    doloribus numquam, magni quod illo delectus nesciunt ipsum. Vero ullam earum facilis nulla!</p>
+                <h4>Hurry Up Only 98 Products Left In Stock</h4>
+                <button type="submit" class="my-3 d-none">Add To Cart <i class="fa-solid fa-cart-shopping"></i></button>
+                <div class="icons d-flex align-items-center mt-3">
+                    <span class="icon d-flex justify-content-center align-items-center"><i
+                            class="fa-regular fa-heart"></i></span>
+                    <span class="icon d-flex justify-content-center align-items-center"><i
+                            class="fa-solid fa-sliders"></i></span>
+                    <span class="icon d-flex justify-content-center align-items-center"><i
+                            class="fa-solid fa-print"></i></span>
+                    <span class="icon d-flex justify-content-center align-items-center"><i
+                            class="fa-solid fa-share-nodes"></i></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="slide slide-sale position-relative">
+        <div class="container">
+            <div class="sale-sec mySwiper overflow-hidden position-relative">
+                <div class="swiper-button-next btn-Swip position-absolute fw-bold" style="z-index: 2;"></div>
+                <div class="swiper-button-prev btn-Swip position-absolute fw-bold" style="z-index: 2;"></div>
+                <div class="top-slide">
+                    <h2 class="position-relative fw-bold mb-0 text-capitalize">on sale <span class="fw-normal">product</span></h2>
+                </div>
+                <div id="TheProducts" class="products py-4 swiper-wrapper position-relative mt-5"></div>
+            </div>
+        </div>
+    </section>
+    <footer class="mt-5 ">
+        <div class="container d-flex align-items-center justify-content-between py-4">
+            <div class="first-row Row">
+                <a href="https://mohamedelgharbawi.github.io/Topico-Home/"><img src="imgs/image e-commrce/img/logo-white.png" alt=""></a>
+                <div class="content d-flex align-items-center my-3">
+                    <i class="fa-solid fa-headset"></i>
+                    <div class="text">
+                        <h5>Hot Line Free 24/24:</h5>
+                        <h6 class="mb-0">(+100) 123 456 7890</h6>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, mollitia!</p>
+            </div>
+            <div class="second-row Row">
+                <h5 class="mb-2">FAGS & Help</h5>
+                <ul class="m-0 p-0">
+                    <li><a href="#">F.A.G.S</a></li>
+                    <li><a href="#">Ordering Tracking</a></li>
+                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Help Center</a></li>
+                </ul>
+            </div>
+            <div class="third-row Row">
+                <h5 class="mb-2">Shipping & Delivery</h5>
+                <ul class="m-0 p-0">
+                    <li><a href="#">Delivery Information</a></li>
+                    <li><a href="#">Discount</a></li>
+                    <li><a href="#">Payment & Shipping</a></li>
+                    <li><a href="#">Estimated Delivery Time</a></li>
+                    <li><a href="#">Shipping Guide</a></li>
+                </ul>
+            </div>
+            <div class="fourth-row Row">
+                <h5 class="mb-2">Information</h5>
+                <ul class="m-0 p-0">
+                    <li><a href="#">Popular</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Your Account</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Condition</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="bottom-footer py-2">
+            <div class="container mt-4 d-flex align-items-center justify-content-between">
+                    <p>Copyright &copy; <span class="fw-bold">Topico.</span> All Rights Reserved <span class="date"></span></p>
+                    <div class="payment-img">
+                        <img src="imgs/image e-commrce/img/payment-1.png" alt="">
+                        <img src="imgs/image e-commrce/img/payment-2.png" alt="">
+                        <img src="imgs/image e-commrce/img/payment-3.png" alt="">
+                        <img src="imgs/image e-commrce/img/payment-4.png" alt="">
+                    </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
